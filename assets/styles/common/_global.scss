@@ -1,0 +1,181 @@
+::-moz-selection {
+    background-color: $highlight;
+    color: white;
+}
+
+::selection {
+    background-color: $highlight;
+    color: white;
+}
+
+/* Site Headers */
+
+.head-type {
+    font-family: $header1;
+    font-size: 55pt;
+    word-spacing: 5px;
+}
+
+.head-type-sub {
+    font-family: $header2;
+    font-size: 22pt;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 1px;
+}
+
+.head-type-lite {
+    @extend .head-type;
+    color: $off-white;
+}
+
+.head-type-sub-lite {
+    @extend .head-type-sub;
+    color: $off-white;
+}
+
+
+
+/* Rows */
+.row {
+    margin-bottom: 32px;
+}
+
+.lead {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+
+/* Type */
+h1, h2 {
+    font-family: $header1;
+}
+
+h3, h4 {
+    font-family: $header2;
+}
+
+p {
+    font-family: $paragraph;
+    font-size: 14pt;
+    margin-bottom: 32px;
+}
+
+li {
+    font-family: $paragraph;
+    font-size: 12pt;
+
+    &:not(:last-child) {
+        margin-bottom: 18px;
+    }
+
+    &:nth-child(even) {
+        font-weight: bold;
+    }
+
+}
+
+/* Global Menu */
+
+.menu-item {
+    a {
+        font-family: $header2;
+    }
+}
+
+
+/* Background Overlay */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $light-grey;
+    z-index: $layer-bottom;
+
+    background-image: url("../../assets/images/pattern.png");
+    background-repeat: repeat;
+    opacity: .65;
+}
+
+
+/* Decorative Elements */
+
+span.corner {
+    position: absolute;
+    opacity: .6;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -30px;
+        width: 70px;
+        height: 10px;
+        background-color: $highlight;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -30px;
+        width: 10px;
+        height: 70px;
+        background-color: $highlight;
+    }
+}
+
+.pretty-popout {
+    box-shadow: -20px -20px $highlight;
+    padding: 2em;
+    background-color: $off-white;
+}
+
+.list-number {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    color: $dark-grey2;
+    font-size: 80pt;
+    font-weight: bold;
+}
+
+/* Portfolio Tags */
+
+.tag-list {
+
+    display: inline-block;
+    padding-left: 0;
+
+
+    li {
+        display: inline-block;
+        margin: 0 .5em;
+
+        a {
+            @extend .inline-link;
+        }
+
+    }
+
+}
+
+
+/* Tags */
+
+.tag {
+    display: inherit;
+    padding: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    text-align: inherit;
+    white-space: inherit;
+    vertical-align: inherit;
+    border-radius: inherit;
+}

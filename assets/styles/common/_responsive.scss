@@ -1,0 +1,303 @@
+/* ################################### */
+/*        Responsive Breakpoints       */
+/* ################################### */
+
+/* Small devices (tablets, 768px) */
+
+/* Medium devices (desktops, 992px) */
+
+/* Large devices (large desktops, 1200px) */
+
+
+/* ################################### */
+
+
+
+/* ################################### */
+/*      Responsive: Desktops, < 992    */
+/* ################################### */
+
+@media screen and (max-width: 992px) {
+    
+    /* Section: Intro */
+    
+    #intro {
+        
+        .title {
+            
+            .corner {
+                top: -5px;
+            }
+            
+            .head-type-lite {
+                font-size: 40pt;
+            }
+            
+            .head-type-sub-lite {
+                font-size: 18pt;
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    /* Portfolio  - Small List */
+    
+    .portfolio-list {
+        .item {
+            width: 50%;
+        }
+    }
+    
+}
+
+
+/* ################################### */
+
+
+
+/* ################################### */
+/*      Responsive: Tablets, < 768     */
+/* ################################### */
+
+@media screen and (max-width: 768px) {
+    
+    
+    /*  Global Elements  */
+    
+    .btn-expert {
+	    font-size: 10pt;
+        padding: 24px 30px;
+    }
+    
+    .head-type {
+        font-size: 34pt;
+    }
+    
+    
+    /*  Header  */
+    
+    
+    header {
+        
+        .logo-section {
+            a {
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+        }
+        
+        /* Mobile Button */
+        
+        .nav {
+            display: none;
+        }
+    
+        .mobile-btn {
+            @include display-flex;
+        }   
+        
+    }
+    
+    
+    
+    /* Secitons General */
+    
+    section {
+        &:not(#intro) {
+            padding-left: 20px;
+            padding-right: 20px;
+            
+            h2 {
+                font-size: 40pt;
+            }
+        }
+        
+    }
+    
+    .container {
+        > div {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+    
+    /* Section: Intro */
+    
+    #intro {
+        
+        .inner-wrap {
+            
+            padding-left: 20px;
+            
+            .title {
+
+                .corner {
+                    top: 0;
+                    left: 30px;
+                    
+                    &:before {
+                        width: 50px;
+                    }
+                    
+                    &:after {
+                        height: 50px;
+                    }
+                    
+                }
+
+                .head-type-lite {
+                    font-size: 30pt;
+                }
+
+                .head-type-sub-lite {
+                    font-size: 11.5pt;
+                }
+
+            }    
+            
+        }
+        
+        
+    }
+    
+    
+    
+    /*  Section: Portfolio  */
+	   
+    .portfolio-list {
+
+        .item {
+
+            width: 100%;
+
+            .overlay {
+                opacity: .5;
+            }
+
+            .item-inner {
+                opacity: 1;
+                @include transform( scale(1) );
+            }
+
+        }
+
+    }
+    
+    
+    
+    /* Section: Pricing */
+    
+    #pricing {
+        
+        .addon-main {
+            
+            flex-direction: column;
+            
+            .price {
+                width: 100% !important;
+                border-bottom: solid 2px $off-white;
+                border-right: none !important;
+            }
+            
+            .info {
+                width: 100% !important;
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    /* Portfolio */
+    
+    #portfolio-single {
+        .preview {
+            height: inherit;
+        }
+        
+	   .design-img {
+	       display: none;
+        }
+    }
+    
+    .portfolio-full-list {
+	   
+        .item {
+            
+            .portfolio-img {
+                display: none;
+            }
+            
+            .item-info {
+                width: 100%;
+                padding: 20px;
+                
+                .info-inner {
+	                h2 {
+                        font-size: 2rem;
+                    }
+                    
+                    .port-links {
+	                    margin-bottom: 0;
+                    }
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    /* Footer */
+    
+    footer {
+        
+       .footer-main {
+        
+            @include flex-direction(column);
+            @include align-items(flex-start);
+
+            padding: 0 15px;
+
+        } 
+        
+        .copyright {
+            margin-bottom: 0;
+        }
+        
+    }
+    
+    
+    
+    
+    
+}
+
+
+/* ################################### */
+
+
+
+
+/* ################################### */
+/* Responsive: Portrait tablets and up */
+/* ################################### */
+@media screen and (min-width: 768px) {
+
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+}

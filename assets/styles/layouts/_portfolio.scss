@@ -1,0 +1,284 @@
+// Small Display List
+
+.portfolio-list {
+    
+    @include display-flex;
+    
+    @include flex-wrap( wrap );
+    
+    .item {
+        
+        position: relative;
+        width: calc( 100% / 3 );
+        // min-width: 365px;
+        height: auto;
+        overflow: hidden;
+        
+        padding: 1em;
+        
+        background-size: cover;
+        background-position: center top;
+        
+        @include display-flex;
+        
+        .overlay {
+            
+            opacity: 0;
+            
+            @include transition( all .2s ease );
+        }
+        
+        .item-inner {
+            
+            background-color: $off-white;
+            padding: 1em;
+            position: relative;
+            z-index: $layer-top;
+            
+            @include transform( translateY(15%) );
+            opacity: 0;
+            
+            @include transition( all .3s ease );
+            
+            @include display-flex;
+            @include flex-direction( column );
+            @include justify-content( space-around );
+            
+        }
+        
+        &:hover {
+            
+            .overlay {
+                opacity: .5;
+            }
+            
+            .item-inner {
+                @include transform( translateY(0%) );
+                opacity: 1;
+            }
+            
+        }
+        
+        .port-links {
+            margin-bottom: 0;
+        }
+        
+        .port-link {
+            
+            margin: 10px;
+            
+            color: $highlight;
+            
+            @include transition( all .2s ease );
+            
+            i {
+                font-size: 34px;
+            }
+            
+            &:before {
+                display: none;
+            }
+            
+            &:hover {
+                color: $highlight2;
+            }
+        }
+        
+    }
+    
+    .item:nth-child(odd) {
+        box-shadow: inset 15px 15px 0px 0px $highlight, inset -15px -15px 0px 0px $highlight2;
+    }
+    
+    .item:nth-child(even) {
+        box-shadow: inset 15px 15px 0px 0px $light-grey, inset -15px -15px 0px 0px $off-white;
+    }
+    
+    .item.blank {
+        
+        @include display-flex;
+        @include justify-content(center);
+        @include align-items(center);
+        @include flex-direction(column);
+        
+        text-align: center;
+        
+        .overlay {
+            opacity: 1;
+            z-index: $layer-behind;
+        }
+        
+        p {
+            margin-bottom: 0;
+            
+            i {
+                color: $off-white;
+                font-size: 60pt;
+            }
+        }
+        
+    }
+    
+}
+
+
+
+// Large Display List
+
+.portfolio-full-list {
+    
+    .item {
+        
+        @include display-flex;
+        
+        .portfolio-img {
+            width: 40%;
+            height: auto;
+            background-size: cover;
+            background-position: center top;
+            box-shadow: inset 15px 15px 0px 0px $highlight, inset -15px -15px 0px 0px $highlight2;
+        }
+        
+        .item-info {
+            
+            width: 60%;
+            min-height: 50vh;
+            padding: 2em 4em;
+            
+            @include display-flex;
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include align-items(center);
+            
+            .info-inner {
+                max-width: 600px;
+                
+                h2 {
+                    font-size: 40pt;
+                }
+                
+            }
+            
+        }
+    }
+    
+    .item:nth-child(odd) {
+        
+        background-color: $off-white;
+        
+        .portfolio-img {
+	       order: 1;
+        }
+        .item-info {
+	       order: 2;
+        }
+    }
+    
+    .item:nth-child(even) {
+        
+        .portfolio-img {
+	       order: 2;
+        }
+        .item-info {
+	       order: 1;
+        }
+    }
+    
+}
+
+
+
+// Single Display
+
+#portfolio-single {
+    
+    .container-fluid {
+        margin-bottom: 60px;
+    }
+    
+    #intro {
+        margin-bottom: 0;
+    }
+    
+    .preview {
+        height: 60vh;
+        background-color: $off-white;
+        
+        .design-img {
+            height: 100%;
+            overflow-y: scroll;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            
+            &::-webkit-scrollbar {
+                width: 10px;
+                background-color: white;
+                border-right: solid 4px $light-grey;
+                padding-top: 15px;
+                
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $dark-grey;
+                border-right: solid 4px $light-grey;
+            }
+            
+        }
+        
+        .design-intro {
+            height: 100%;
+            
+            @include display-flex;
+            @include align-items( center );
+            
+            padding-top: 2em;
+            
+            p {
+                font-family: $header2;
+                font-size: 18pt;
+            }
+            
+        }
+    }
+    
+    .contact-callout {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: solid 10px $highlight;
+        
+        .overlay {
+	        z-index: $layer-behind;
+            opacity: 1;
+        }
+        
+        .container {
+            z-index: $layer-top;
+        }
+        
+        .contact-callout-inner {
+            
+            @include display-flex;
+            @include justify-content( space-around );
+            @include align-items( center );
+            
+            padding: 3em 1em;
+            
+            h2 {
+                color: $off-white;
+            }
+        }
+    }
+    
+    .rundown {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        margin-bottom: 60px;
+        
+        p {
+            font-size: 18pt;
+        }
+        
+    }
+    
+}

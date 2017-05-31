@@ -1,0 +1,178 @@
+/* Custom page header */
+.header {
+
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    z-index: 6;
+    
+    @include transition( top .4s ease );
+
+    .header-inner {
+
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        @include display-flex;
+        @include align-items(center);
+        @include justify-content(space-between);
+        
+        .logo-section {
+            img {
+                width: auto;
+                max-height: 80px;
+            }
+        }
+
+        nav {
+            
+            .nav-pills > li {
+                margin-bottom: 0;
+                font-weight: 400;
+                position: relative;
+                display: inline-block;
+                
+                .sub-menu {
+                    display: none;
+                    position: absolute;
+                    top: 150%;
+                    z-index: $layer-bottom;
+                    list-style-type: none;
+                    padding: 0;
+                    animation-name: subMenuIntro;
+                    animation-duration: .3s;
+                    
+                    li {
+                        display: block;
+                        margin-bottom: 5px;
+                        
+                        a {
+                            padding: .6em 1.2em;
+                            width: 150px;
+                            display: block;
+                            background-color: $dark-grey2;
+                            color: $off-white;
+                            font-size: 11pt;
+                            letter-spacing: 1px;
+                            text-decoration: none;
+                            font-weight: 400;
+                            position: relative;
+                            box-shadow: 0px 2px 10px -4px $dark-grey;
+                            
+                            &:hover {
+                                
+                                &:after {
+                                    opacity: 1;
+                                    @include transform( translate(0,0) );
+                                }
+                                
+                            }
+                            
+                            &:after {
+                                
+                                content: '';
+                                height: 5px;
+                                width: 100%;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                background-color: $highlight;
+                                opacity: 0;
+                                @include transform( translate(0,100%) );
+                                
+                                @include transition(all .2s ease);
+                                
+                            }
+                            
+                        }
+                    }
+                }
+                
+                &:hover{
+                    
+                    .sub-menu {
+                        display: block;
+                    }
+                    
+                }
+                
+            }
+            
+            .nav-pills > li > a {
+                color: $off-white;
+                letter-spacing: 1px;
+                text-decoration: none;
+                padding: .6em 1em;
+
+                position: relative;
+                z-index: $layer-top;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: 0;
+                    height: 5px;
+                    background-color: $highlight;
+
+                    @include transition( all .2s ease );
+                }
+
+                &:hover {
+                    background-color: transparent;
+
+                    &:after {
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+            }            
+            
+        }
+
+    }
+
+}
+
+
+
+.showMenu {
+    
+    position: fixed;
+    top: 0 !important;
+    animation-name: slideDown;
+    animation-duration: .3s;
+    box-shadow: 0px 2px 10px -3px $dark-grey;
+    background-color: $dark-grey;
+    
+    .logo-section {
+        
+        img {
+            width: auto;
+            height: 60px;
+        }
+        
+    }
+    
+}
+
+.removeMenu {
+    
+    position: fixed;
+    top: -200px !important;
+    animation-name: slideUp;
+    animation-duration: .3s;
+    background-color: $dark-grey;
+    
+    .logo-section {
+        
+        img {
+            width: auto;
+            height: 60px;
+        }
+        
+    }
+    
+}

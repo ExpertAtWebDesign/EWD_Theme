@@ -1,0 +1,123 @@
+/* Buttons */
+
+.btn-expert {
+    position: relative;
+    display: inline-block;
+
+    color: $dark-grey;
+    background-color: $off-white;
+
+    line-height: 0;
+    padding: 28px 40px 28px 40px;
+    margin-right: 10px;
+
+    font-family: $header2;
+    font-weight: 300;
+    font-size: 12pt;
+    letter-spacing: 1px;
+
+    overflow: hidden;
+
+    box-shadow: inset 0 0 0 10px $highlight, 0px 2px 15px -7px rgba(0,0,0,.6);
+
+    @include transition( all .2s ease );
+
+    &:hover {
+        color: $off-white;
+        text-decoration: none;
+
+        box-shadow: inset 0 0 0 30px $highlight, 0px 2px 15px -7px rgba(0,0,0,.6);
+    }
+}
+
+
+
+/* Extending Button Styling to other buttons */
+
+.comment-reply-link {
+    
+    @extend .inline-link;
+    font-size: 20px;
+    margin-left: 26px;
+    position: relative;
+    
+    &:after {
+        content: 'forum';
+        font-family: 'Material Icons';
+        position: absolute;
+        top: 2px;
+        left: -26px;
+        color: $highlight;
+    }
+    
+}
+
+.comment-form {
+    
+    input.submit {
+        @extend .btn-expert;
+        border: none;
+        border-radius: 0;
+    }
+    
+}
+
+
+
+/* Inline site links */
+
+.inline-link {
+    color: inherit;
+    font-weight: bold;
+    word-spacing: 0;
+    position: relative;
+    z-index: $layer-top;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 15%;
+        left: -5%;
+        z-index: $layer-behind;
+        width: 110%;
+        height: 20%;
+        background-color: $highlight;
+        opacity: .6;
+
+        @include transition(all .2s ease);
+    }
+
+    &:hover {
+        color: inherit;
+        text-decoration: none;
+
+        &:before {
+            bottom: 7%;
+            height: 80%;
+        }
+    }
+}
+
+
+h2, h3 {
+    a {
+        color: $highlight;
+        @include transition( all .2s ease );
+        
+        &:hover {
+            color: $highlight2;
+            text-decoration: none;
+        }
+    }
+}
+
+p a {
+    @extend .inline-link;
+}
+
+p .btn-expert {
+    @extend .btn-expert;
+    &:before {
+        display: none;
+    }
+}

@@ -1,0 +1,61 @@
+#comments {
+    
+    .comment {
+        
+        padding: 1em;
+        margin-bottom: 32px;
+        
+        article {
+            margin-bottom: 32px;
+        }
+        
+    }
+    
+    .children {
+        .comment {
+            border-left: 10px solid $highlight;
+        }
+        
+        .odd {
+            background-color: transparent;
+        }
+        
+        .even {
+            background-color: $off-white;
+        }
+    }
+    
+    .odd {
+        background-color: $off-white;
+    }
+    
+}
+
+.comment-meta {
+    
+    margin-bottom: 32px;
+    
+    .comment-metadata {
+        
+        a {
+            @extend .inline-link;
+        }
+        
+        .edit-link {
+            a {
+                margin-left: 40px;
+                
+                &:after {
+                    content: 'edit';
+                    font-family: 'Material Icons';
+                    position: absolute;
+                    top: 2px;
+                    left: -16px;
+                    color: $highlight;
+                }
+            }
+        }
+        
+    }
+    
+}

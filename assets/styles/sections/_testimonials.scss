@@ -1,0 +1,54 @@
+#testimonials {
+
+    position: relative;
+
+    .container {
+        position: relative;
+        z-index: $layer-top;
+    }
+
+    .container > div {
+
+        position: relative;
+
+        i {
+            position: absolute;
+            top: 0;
+            left: -10px;
+            font-size: 70pt;
+            line-height: 35pt;
+            z-index: $layer-bottom;
+
+            color: $highlight;
+            opacity: .6;
+        }
+
+    }
+    
+    i {
+        position: absolute;
+        top: 0;
+        left: -10px;
+        font-size: 70pt;
+        line-height: 35pt;
+        z-index: $layer-bottom;
+
+        color: $highlight;
+        opacity: .6;
+    }
+
+
+    .quote {
+        color: $off-white;
+        font-size: 18pt;
+        letter-spacing: 1px;
+        position: relative;
+        z-index: $layer-top;
+    }
+
+    .speaker {
+        color: $off-white;
+        margin-bottom: 0;
+    }
+
+}

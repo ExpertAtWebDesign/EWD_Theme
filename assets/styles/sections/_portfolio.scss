@@ -1,0 +1,70 @@
+/*  Portfolio Styling  */
+
+#portfolio {
+
+    .project-list {
+
+        .item {
+
+            position: relative;
+            padding: 20px;
+            width: 100%;
+            display: inline-block;
+            overflow: hidden;
+
+            background-size: cover;
+            background-position: center top;
+
+            .overlay {
+                opacity: 0;
+                @include transition(opacity .2s ease);
+            }
+
+            .item-inner {
+                position: relative;
+                z-index: $layer-top;
+                padding: 20px;
+                border: 10px solid $highlight;
+                background-color: $off-white;
+                min-height: 300px;
+
+                @include display-flex;
+                @include flex-direction( column );
+                @include justify-content( space-around );
+
+                /* To animate */
+
+                @include transform( scale(.6) );
+                opacity: 0;
+
+                @include transition( all .3s ease );
+
+                .pro-name {
+                    margin-bottom: 0;
+                }
+
+                .desc {
+                    margin-bottom: 0;
+                }
+
+                .site-link-wrap {
+                    margin-bottom: 0;
+                }
+            }
+
+            &:hover {
+
+                .overlay {
+                    opacity: .5;
+                }
+
+                .item-inner {
+                    @include transform( scale(1) );
+                    opacity: 1;
+                }
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,176 @@
+/* Introductory Section */
+
+#intro {
+
+    position: relative;
+    overflow: hidden;
+
+    @include display-flex;
+    @include align-items(center);
+
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    
+    margin-bottom: 3em;
+
+    .inner-wrap {
+        position: relative;
+        z-index: $layer-top;
+        padding-left: 30px;
+        
+        .callouts {
+            p {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+
+}
+
+.homepage {
+    
+    height: 92vh;
+    
+    .inner-wrap {
+        
+        .title {
+            margin-bottom: 3em;
+        }
+        
+        .callouts {
+            color: $off-white;
+        }
+        
+    }
+    
+    .intro-scroller {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: $layer-top;
+        @include display-flex;
+        @include justify-content( space-between );
+        @include align-items( flex-end );
+        
+        .scroll-button {
+            
+            width: 100px;
+            position: relative;
+            cursor: pointer;
+            
+            p {
+                color: white;
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 11px;
+                letter-spacing: 2px;
+                padding-bottom: 15px;
+                margin-bottom: 0;
+                z-index: $layer-top;
+                
+                @include transition( all .2s ease );
+            }
+            
+            .dot {
+                font-size: 60px;
+                line-height: 60px;
+                margin-top: -60px;
+                padding-bottom: 10px;
+            }
+            
+            &:after {
+                content: '';
+                position: absolute;
+                top: 10px;
+                left: 29px;
+                width: 0;
+                height: 0;
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-top: 40px solid $highlight;
+                opacity: .5;
+                z-index: $layer-behind;
+                
+                @include transition( all .2s ease );
+            }
+            
+            &:hover {
+                p {
+                    margin-bottom: 2px;
+                }
+                
+                &:after {
+                    top: 15px;
+                }
+            }
+            
+        }
+        
+        .line {
+            width: calc(50% - 50px);
+            height: 50px;
+            background-color: white;
+            position: relative;
+        }
+        
+        .line-left {
+            &:after {
+                content: '';
+                position: absolute;
+                left: 100%;
+                width: 0;
+                height: 0;
+                border-bottom: 50px solid white;
+                border-right: 50px solid transparent; 
+            }
+        }
+        .line-right {
+            &:after {
+                content: '';
+                position: absolute;
+                right: 100%;
+                width: 0;
+                height: 0;
+                border-bottom: 50px solid white;
+                border-left: 50px solid transparent; 
+            }
+        }
+        
+        
+    }
+    
+}
+
+.page-header {
+	
+    padding-top: 3em;
+    padding-bottom: 3em;
+    min-height: 40vh;
+    
+    .inner-wrap {
+        margin-top: 3em;
+    }
+    
+}
+
+.header-noBG {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    
+    .overlay {
+        opacity: 1;
+    }
+}
+
+#intro {
+    
+    .callouts {
+	   color: $off-white;
+}
+    
+}
+
+
